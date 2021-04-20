@@ -49,8 +49,8 @@ def approximate(A, k):
     return matrix(u.dot(sigma.dot(vh)))
 
 
-cases = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/Rehnquist-cases.csv', index_col=0)
-fivefour = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/Rehnquist-five-four.csv', index_col=0)
-agreement = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/rehnquist-agreement.csv', index_col=0)
+cases = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/Rehnquist-cases.csv', index_col=0)
+fivefour = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/Rehnquist-five-four.csv', index_col=0)
+agreement = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/rehnquist-agreement.csv', index_col=0)
 
 

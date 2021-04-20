@@ -3,7 +3,7 @@ import numpy as np
 from operator import itemgetter
 from sage.plot.colors import rainbow
 
-df = pd.read_csv("http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/clusters_data.csv", header = None)
+df = pd.read_csv("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/clusters_data.csv", header = None)
 data = [vector(r) for r in df.values]
 
 def kmeans(data, k):

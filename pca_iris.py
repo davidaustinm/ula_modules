@@ -23,7 +23,7 @@ def pca_plot(M):
     plt.show()
 
 
-df = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/iris.data')
+df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/iris.data')
 data = df[df.columns[:4]]
 data_mean = vector(data.mean())
 A = matrix([vector(row) for row in (data-data.mean()).values]).T

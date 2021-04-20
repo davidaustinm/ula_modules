@@ -31,8 +31,8 @@ def pca_plot(M, sex='all'):
     plt.show()
 
 
-df = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/penguins.csv')
+df = pd.read_csv(https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/penguins.csv')
 df = df.drop(columns=['Unnamed: 0'])
-data = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/penguins_data.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/penguins_data.csv')
 data = data.drop(columns=['Unnamed: 0'])
 A = matrix(data.values).T

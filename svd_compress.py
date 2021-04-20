@@ -65,13 +65,13 @@ image = Image.open(BytesIO(response.content)).convert('LA')
 image = np.array(image)[:,:,0]
 image = np.array(image)
 
-noise = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/noise.csv', header=None, index_col=False)
+noise = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/noise.csv', header=None, index_col=False)
 
 
-letter = pd.read_csv('http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/letter.csv', header=None, index_col=False, sep=' ')
+letter = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/letter.csv', header=None, index_col=False, sep=' ')
 A = matrix(RDF, letter.values)
 
-url = 'http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/new-utah-noise.png'
+url = 'https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/new-utah-noise.png'
 response = requests.get(url)
 noiseimage = Image.open(BytesIO(response.content)).convert('LA')
 noiseimage = np.array(noiseimage)[:,:,0]
