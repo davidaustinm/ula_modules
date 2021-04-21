@@ -59,7 +59,7 @@ def plot_sv(A):
     sv = A.singular_values()
     return list_plot(sv, plotjoined=True) + list_plot(sv, size=30)
 
-url = 'http://merganser.math.gvsu.edu/david/linear.algebra/ula/data/utah-gray.png'
+url = 'https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/utah-gray.png'
 response = requests.get(url)
 image = Image.open(BytesIO(response.content)).convert('LA')
 image = np.array(image)[:,:,0]
