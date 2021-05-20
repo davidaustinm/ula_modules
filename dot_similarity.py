@@ -10,7 +10,7 @@ def demean(v):
 def series_plot(v, color):
     return list_plot(v, color=color, plotjoined=True) + list_plot(v, color=color,size=20)
 
-events = pd.read_csv("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/events.csv", index_col=0)
+events = pd.read_csv("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/events.csv")
 series = pd.read_csv("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/time-series.csv", header=None)
 
 veterans = vector(events['Veterans Day'])
