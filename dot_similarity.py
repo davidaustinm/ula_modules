@@ -13,11 +13,11 @@ def series_plot(v, color):
 events = pd.read_csv("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/events.csv", index_col=0)
 series = pd.read_csv("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/time-series.csv", header=None)
 
-veterans = vector(events['Veterans Day'])
-memorial = vector(events['Memorial Day'])
-labor = vector(events['Labor Day'])
-golden = vector(events['Golden Globe Awards'])
-super = vector(events['Super Bowl'])
+veterans = vector(events['Veterans Day'].values)
+memorial = vector(events['Memorial Day'].values)
+labor = vector(events['Labor Day'].values)
+golden = vector(events['Golden Globe Awards'].values)
+super = vector(events['Super Bowl'].values)
 
 s1 = vector(series[0])
 s2 = vector(series[3])
