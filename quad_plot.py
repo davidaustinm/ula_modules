@@ -11,5 +11,6 @@ def quad_plot(A):
 	           aspect_ratio=(1,1,1/max(matrix(RDF,A).singular_values())),
 	           transformation=T)
     curve = parametric_plot3d([cos(theta), sin(theta), q(1, theta)],
-                              (theta,0,2*pi), thickness=3)   
+                              (theta,0,2*pi), thickness=3)
+    print('hi')
     return graph + curve
