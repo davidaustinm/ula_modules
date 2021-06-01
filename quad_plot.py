@@ -12,4 +12,4 @@ def quad_plot(A):
 	           transformation=T)
     curve = parametric_plot3d([cos(theta), sin(theta), q(1, theta)],
                               (theta,0,2*pi), thickness=3)   
-    graph + curve
+    return graph + curve
