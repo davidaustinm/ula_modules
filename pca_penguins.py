@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def culmen_plot():
     fig = plt.figure()#figsize=(10,10))
-    ax = fig.add_subplot('111')
+    ax = fig.add_subplot(1,1,1)
     ax.set_aspect(1)
     sns.scatterplot(x = 'Culmen Length (mm)', y = 'Culmen Depth (mm)', hue = 'Species', style='Sex', data=df, ax=ax)
     plt.legend(bbox_to_anchor=(0,1.05), loc=3, borderaxespad=0.)
@@ -17,7 +17,7 @@ def pca_plot(M, sex='all'):
     proj['Species'] = df['Species']
     proj['Sex'] = df['Sex']
     fig = plt.figure()#figsize=(20,10))
-    ax = fig.add_subplot('111')
+    ax = fig.add_subplot(1,1,1)
     ax.set_aspect(1)
     if sex == 'all':
         sns.scatterplot(x = 0, y = 1, hue = 'Species', style='Sex', data=proj, ax=ax)
