@@ -5,7 +5,7 @@ def degrees(x):
     return N(x*180.0/pi)
 
 def demean(v):
-    return vector(v - np.mean(v)*np.ones(len(v)))
+    return vector(v - np.mean(v.coefficients())*np.ones(len(v)))
 
 def series_plot(v, color):
     return list_plot(v, color=color, plotjoined=True) + list_plot(v, color=color,size=20)

@@ -22,5 +22,5 @@ def onesvec(n):
     return vector([1] * n)
 
 def demean(v):
-    return v - np.mean(v)*onesvec(len(v))
+    return v - np.mean(v.coefficients())*onesvec(len(v))
 
