@@ -1,21 +1,22 @@
 import pandas as pd
 import numpy as np
 from operator import itemgetter
-from sage.plot.colors import rainbow
+#from sage.plot.colors import rainbow
 
 df = pd.read_csv("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/clusters_data.csv", header = None)
-data = [vector(r) for r in df.values]
+data = np.array([r for r in df.values])
 
 def kmeans(data, k):
     N = 15
-    centroids = sample(data, k)
+    centroid_indices = np.random.choice(len(data), size=k, replace=False)
+    centroids = data[centroid_indices]
     for _ in range(N):
         clusters = [ [] for __ in range(k)]
         for datum in data:
-            distances = [(datum - centroids[j]).norm() for j in range(k)]
+            distances = [np.linalg.norm(datum - centroids[j]) for j in range(k)]
             clusters[np.argmin(distances)].append(datum)
-        centroids = [mean(clusters[j]) if len(clusters[j]) > 0 else centroids[j] for j in range(k)]
-    distances = [sum([(clusters[i][j] - centroids[i]).norm()**2
+        centroids = [np.mean(clusters[j], axis=0) if len(clusters[j]) > 0 else centroids[j] for j in range(k)]
+    distances = [sum([np.linalg.norm(clusters[i][j] - centroids[i])**2
                       for j in range(len(clusters[i]))])
                      for i in range(len(clusters))]
     return [clusters, centroids, sum(distances)/len(data)]
