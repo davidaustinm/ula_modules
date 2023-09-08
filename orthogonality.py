@@ -22,7 +22,7 @@ def onesvec(n):
     return vector([1] * n)
 
 def demean(v):
-    return v - mean(v)*onesvec(len(v))
+    return v - np.mean(v)*onesvec(len(v))
 
 def vandermonde(data, k):
     rows = [[datum**j for j in range(k+1)] for datum in data]

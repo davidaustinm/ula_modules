@@ -14,7 +14,7 @@ def kmeans(data, k):
         for datum in data:
             distances = [(datum - centroids[j]).norm() for j in range(k)]
             clusters[np.argmin(distances)].append(datum)
-        centroids = [mean(clusters[j]) if len(clusters[j]) > 0 else centroids[j] for j in range(k)]
+        centroids = [np.mean(clusters[j]) if len(clusters[j]) > 0 else centroids[j] for j in range(k)]
     distances = [sum([(clusters[i][j] - centroids[i]).norm()**2
                       for j in range(len(clusters[i]))])
                      for i in range(len(clusters))]
